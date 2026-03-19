@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Willed Company Limited — Kenya's integrated medical and general supply company with financial advisory services. Nairobi, Kenya."/>
+<title>Willed Company Limited | Seeing Further, Delivering Better</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+#hero{min-height:100vh;background:var(--grad-hero);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:56px 56px}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.12}
+.orb1{width:600px;height:600px;background:var(--blue);right:-100px;top:-100px;animation:floatUp 8s ease-in-out infinite}
+.orb2{width:400px;height:400px;background:var(--teal);left:-80px;bottom:0;animation:floatUp 10s ease-in-out infinite 2s}
+.orb3{width:300px;height:300px;background:var(--gold);right:30%;top:20%;animation:floatUp 12s ease-in-out infinite 4s}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:8rem 0 4rem}
+.hero-pill{display:inline-flex;align-items:center;gap:0.7rem;padding:0.38rem 1rem;border:1px solid rgba(10,191,188,0.4);border-radius:20px;margin-bottom:1.8rem}
+.hero-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:blinkDot 2s infinite}
+.hero-pill span{font-size:0.67rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal)}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.2rem);font-weight:900;line-height:1.06;color:var(--white);margin-bottom:1.4rem;letter-spacing:-0.02em}
+.hero-title em{font-style:italic;color:var(--gold2)}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:2.2rem;max-width:500px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.hero-chips{display:flex;gap:0.6rem;flex-wrap:wrap}
+.hero-metrics{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:0;flex-wrap:wrap;margin-top:1.8rem}
+.hm{padding:0 2.2rem 0 0}
+.hm:first-child{padding-left:0}
+.hm-num{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;line-height:1}
+.hm-label{font-size:0.62rem;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-top:0.3rem}
+.hm-sep{width:1px;height:44px;background:rgba(255,255,255,0.1);margin:0 2rem 0 0;flex-shrink:0}
+.hm:nth-child(1) .hm-num{color:var(--gold2)}
+.hm:nth-child(3) .hm-num{color:var(--teal)}
+.hm:nth-child(5) .hm-num{color:var(--coral)}
+.hm:nth-child(7) .hm-num{color:var(--purple)}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.hv-logo-wrap{position:relative;display:flex;justify-content:center;align-items:center}
+.hv-ring{position:absolute;border-radius:50%;border:1px solid rgba(201,168,76,0.12)}
+.hv-r1{width:480px;height:480px}
+.hv-r2{width:380px;height:380px;border-color:rgba(10,191,188,0.1)}
+.hv-logo{width:100%;max-width:400px;border-radius:12px;border:2px solid rgba(201,168,76,0.3);box-shadow:0 30px 80px rgba(0,0,0,0.4);animation:floatUp 6s ease-in-out infinite;position:relative;z-index:2}
+.hv-chips{position:absolute;right:-20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:0.8rem;z-index:3}
+.hv-chip{background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.7rem 1rem;display:flex;align-items:center;gap:0.7rem;min-width:175px}
+.hvc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.hvc-label{font-size:0.7rem;color:rgba(255,255,255,0.75);font-weight:600}
+.hvc-sub{font-size:0.65rem;color:rgba(255,255,255,0.4)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;z-index:3}
+.scroll-hint span{font-size:0.6rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s infinite}
+
+/* ABOUT STRIP */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;height:460px;object-fit:cover;border-radius:12px}
+.about-img-frame{position:absolute;top:-12px;left:-12px;right:12px;bottom:12px;border:2px solid var(--gold);border-radius:12px;z-index:-1}
+.about-corner{position:absolute;bottom:-16px;right:-16px;background:var(--navy);padding:1.4rem 1.8rem;border-radius:10px;border-left:4px solid var(--gold)}
+.ac-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700;line-height:1}
+.ac-label{font-size:0.63rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.2rem}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:2rem}
+.val{padding:1rem 1.2rem;border-radius:8px;border-left:3px solid;display:flex;gap:0.8rem;align-items:flex-start}
+.val.v1{background:#FFF9EC;border-color:var(--gold)}
+.val.v2{background:#EFF6FF;border-color:var(--blue)}
+.val.v3{background:#EFFFFE;border-color:var(--teal)}
+.val.v4{background:#FFF2F2;border-color:var(--coral)}
+.val-icon{font-size:1rem;flex-shrink:0;margin-top:0.1rem}
+.val-title{font-size:0.82rem;font-weight:700;color:var(--navy)}
+.val-desc{font-size:0.72rem;color:var(--gray);margin-top:0.1rem}
+
+/* SERVICES PREVIEW */
+.svc-prev{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.sp-card{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);transition:all 0.3s;position:relative}
+.sp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.sp-card.c1::before{background:var(--grad-gold)}
+.sp-card.c2::before{background:var(--grad-blue)}
+.sp-card.c3::before{background:var(--grad-warm)}
+.sp-card:hover{background:rgba(255,255,255,0.07);transform:translateY(-4px)}
+.sp-inner{padding:2.2rem}
+.sp-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-size:1.3rem}
+.sp-icon.i1{background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3)}
+.sp-icon.i2{background:rgba(30,111,217,0.15);border:1px solid rgba(30,111,217,0.3)}
+.sp-icon.i3{background:rgba(10,191,188,0.15);border:1px solid rgba(10,191,188,0.3)}
+.sp-title{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--white);margin-bottom:0.6rem}
+.sp-text{font-size:0.8rem;color:rgba(255,255,255,0.48);line-height:1.75}
+.sp-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:1.2rem;font-weight:700;transition:gap 0.3s}
+.sp-card.c1 .sp-link{color:var(--gold2)}
+.sp-card.c2 .sp-link{color:var(--teal)}
+.sp-card.c3 .sp-link{color:var(--coral)}
+.sp-card:hover .sp-link{gap:0.7rem}
+
+/* PARTNERSHIP PREVIEW */
+.pp-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.donut-w{position:relative;width:220px;height:220px;margin:2rem 0}
+.donut-w svg{width:100%;height:100%}
+.donut-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donut-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--white);font-weight:700;line-height:1}
+.donut-lbl{font-size:0.6rem;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-top:0.2rem}
+.leg-row{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem}
+.leg-item{display:flex;align-items:center;gap:0.9rem;font-size:0.82rem;color:rgba(255,255,255,0.65)}
+.leg-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.pmini{border-radius:10px;overflow:hidden;margin-bottom:1.2rem}
+.pmini-head{padding:1.4rem;display:flex;align-items:center;gap:1rem;position:relative}
+.pmini-head.lg{background:linear-gradient(135deg,rgba(201,168,76,0.18),rgba(201,168,76,0.05));border:1px solid rgba(201,168,76,0.3);border-bottom:none}
+.pmini-head.bl{background:linear-gradient(135deg,rgba(30,111,217,0.18),rgba(30,111,217,0.05));border:1px solid rgba(30,111,217,0.3);border-bottom:none}
+.pmini-av{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.78rem;flex-shrink:0}
+.pmini-av.gd{background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.4);color:var(--gold)}
+.pmini-av.bl{background:rgba(30,111,217,0.2);border:1px solid rgba(30,111,217,0.4);color:var(--blue2)}
+.pmini-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);margin-bottom:0.1rem}
+.pmini-role{font-size:0.63rem;letter-spacing:1.5px;text-transform:uppercase}
+.pmini-role.gd{color:var(--gold)}
+.pmini-role.bl{color:var(--blue2)}
+.pmini-share{margin-left:auto;font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700}
+.pmini-share.gd{color:var(--gold)}
+.pmini-share.bl{color:var(--blue2)}
+.pmini-body{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-top:none;padding:1rem 1.4rem}
+.pmini-body li{font-size:0.76rem;color:rgba(255,255,255,0.48);padding:0.3rem 0;display:flex;gap:0.5rem;border-bottom:1px solid rgba(255,255,255,0.04)}
+.pmini-body li:last-child{border-bottom:none}
+.pmini-body li::before{content:'→';color:var(--gold);flex-shrink:0}
+
+@media(max-width:960px){.hero-inner,.about-grid,.pp-grid{grid-template-columns:1fr}.hero-visual{display:none}.svc-prev{grid-template-columns:1fr 1fr}.hm-sep{display:none}}
+@media(max-width:560px){.svc-prev,.vals{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-pill ha"><div class="hero-pill-dot"></div><span>Est. 2026 &nbsp;&middot;&nbsp; Nairobi, Kenya &nbsp;&middot;&nbsp; Private Ltd</span></div>
+        <h1 class="hero-title ha ha1"><em>Seeing further.</em><br>Delivering better.</h1>
+        <p class="hero-sub ha ha2">Kenya's integrated medical &amp; general supply company with a built-in financial advisory division — your single trusted partner for operational excellence and financial growth.</p>
+        <div class="hero-btns ha ha3">
+          <a href="pages/services.html" class="btn btn-gold">Explore Services</a>
+          <a href="pages/partnership.html" class="btn btn-ghost">Partnership Opportunity &rarr;</a>
+        </div>
+        <div class="hero-chips ha ha3">
+          <span class="chip chip-teal">Medical Supplies</span>
+          <span class="chip chip-gold">General Supplies</span>
+          <span class="chip chip-purple">Financial Advisory</span>
+          <span class="chip chip-coral">Kenya-wide</span>
+        </div>
+        <div class="hero-metrics ha ha4">
+          <div class="hm"><div class="hm-num">KES 6M+</div><div class="hm-label">Year 1 Revenue</div></div>
+          <div class="hm-sep"></div>
+          <div class="hm"><div class="hm-num">2</div><div class="hm-label">Divisions</div></div>
+          <div class="hm-sep"></div>
+          <div class="hm"><div class="hm-num">4</div><div class="hm-label">Segments</div></div>
+          <div class="hm-sep"></div>
+          <div class="hm"><div class="hm-num">47</div><div class="hm-label">Counties</div></div>
+        </div>
+      </div>
+      <div class="hero-visual ha ha2">
+        <div class="hv-logo-wrap">
+          <div class="hv-ring hv-r1"></div>
+          <div class="hv-ring hv-r2"></div>
+          <img class="hv-logo" src="images/logo.png" alt="Willed Company Limited"/>
+          <div class="hv-chips">
+            <div class="hv-chip"><div class="hvc-dot" style="background:var(--gold)"></div><div><div class="hvc-label">Medical &amp; General Supplies</div><div class="hvc-sub">Division 01</div></div></div>
+            <div class="hv-chip"><div class="hvc-dot" style="background:var(--teal)"></div><div><div class="hvc-label">Financial Advisory</div><div class="hvc-sub">Division 02</div></div></div>
+            <div class="hv-chip"><div class="hvc-dot" style="background:var(--coral)"></div><div><div class="hvc-label">100% Kenyan Owned</div><div class="hvc-sub">Est. 2026</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll to explore</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="vision-band"><div class="vision-inner"><div class="vq-mark">"</div><div><p class="vq-text">To be Kenya's most trusted integrated supply and financial advisory company — <strong>seeing every client need clearly</strong>, and delivering solutions that drive lasting growth.</p><cite class="vq-cite">— Edwin William Otieno, Managing Director &amp; Founder · Willed Company Limited</cite></div></div></div>
+
+<section class="section s-cream"><div class="wrap"><div class="about-grid">
+  <div class="about-img-wrap anim"><img class="about-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Professional team Kenya"/><div class="about-img-frame"></div><div class="about-corner"><div class="ac-num">2026</div><div class="ac-label">Founded · Nairobi</div></div></div>
+  <div class="anim d1">
+    <div class="eyebrow"><div class="eyebrow-bar"></div>Who We Are</div>
+    <h2 class="heading" style="margin-bottom:1rem;">Built on vision,<br>purpose &amp; <em>resolve.</em></h2>
+    <p class="body-text">Willed Company Limited was founded to close two persistent gaps in Kenya — unreliable medical and general supply chains, and the lack of accessible professional financial advisory for growing businesses and institutions.</p>
+    <p class="body-text" style="margin-top:0.8rem;">We supply what you need today and help you plan wisely for tomorrow.</p>
+    <a href="pages/about.html" class="btn btn-outline" style="margin-top:1.8rem;">Read Our Full Story &rarr;</a>
+    <div class="vals">
+      <div class="val v1"><div class="val-icon">◆</div><div><div class="val-title">Integrity</div><div class="val-desc">Transparent always</div></div></div>
+      <div class="val v2"><div class="val-icon">◆</div><div><div class="val-title">Reliability</div><div class="val-desc">On-time, every time</div></div></div>
+      <div class="val v3"><div class="val-icon">◆</div><div><div class="val-title">Excellence</div><div class="val-desc">Zero compromise</div></div></div>
+      <div class="val v4"><div class="val-icon">◆</div><div><div class="val-title">Foresight</div><div class="val-desc">Seeing further</div></div></div>
+    </div>
+  </div>
+</div></div></section>
+
+<section class="section s-dark"><div class="wrap">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3rem" class="anim">
+    <div><div class="eyebrow teal"><div class="eyebrow-bar"></div>What We Do</div><h2 class="heading light">Two divisions.<br><em>One trusted company.</em></h2></div>
+    <div><p class="body-text light">Covering every angle of your operational and financial needs.</p><a href="pages/services.html" class="btn btn-gold" style="margin-top:1.5rem;">View All Services &rarr;</a></div>
+  </div>
+  <div class="svc-prev">
+    <div class="sp-card c1 anim d1"><div class="sp-inner"><div class="sp-icon i1">🏥</div><div class="sp-title">Medical Supplies</div><p class="sp-text">PPE, pharmaceutical consumables, diagnostic supplies, surgical sundries — quality-assured and delivered reliably.</p><a href="pages/services.html" class="sp-link">Learn More &rarr;</a></div></div>
+    <div class="sp-card c2 anim d2"><div class="sp-inner"><div class="sp-icon i2">📦</div><div class="sp-title">General Supplies</div><p class="sp-text">Office stationery, cleaning products, catering supplies, safety equipment — institutional procurement simplified.</p><a href="pages/services.html" class="sp-link">Learn More &rarr;</a></div></div>
+    <div class="sp-card c3 anim d3"><div class="sp-inner"><div class="sp-icon i3">📊</div><div class="sp-title">Financial Advisory</div><p class="sp-text">Cash flow management, procurement budgeting, investment advisory, tender financial support.</p><a href="pages/services.html" class="sp-link">Learn More &rarr;</a></div></div>
+  </div>
+</div></section>
+
+<div class="stat-strip"><div class="wrap"><div class="stat-strip-inner">
+  <div class="ss-cell anim"><div class="ss-num">KES 48B+</div><div class="ss-label">Public Medical Supply Market</div></div>
+  <div class="ss-cell anim d1"><div class="ss-num">47</div><div class="ss-label">Counties with Growing Procurement</div></div>
+  <div class="ss-cell anim d2"><div class="ss-num">80%+</div><div class="ss-label">SMEs Lacking Financial Advisory</div></div>
+  <div class="ss-cell anim d3"><div class="ss-num">KES 4B+</div><div class="ss-label">Financial Advisory Market Gap</div></div>
+</div></div></div>
+
+<section class="section s-dark"><div class="wrap"><div class="pp-grid">
+  <div class="anim">
+    <div class="eyebrow"><div class="eyebrow-bar"></div>Ownership Structure</div>
+    <h2 class="heading light" style="margin-bottom:1rem;">Two founders.<br><em>One clear structure.</em></h2>
+    <p class="body-text light" style="margin-bottom:1.5rem;">Incorporated under Kenya's Companies Act, 2015. 100 ordinary shares allocated to reflect each founder's strategic role.</p>
+    <div class="donut-w">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="34"/><circle cx="100" cy="100" r="76" fill="none" stroke="#C9A84C" stroke-width="34" stroke-dasharray="286 477" stroke-dashoffset="119"/><circle cx="100" cy="100" r="76" fill="none" stroke="#1E6FD9" stroke-width="34" stroke-dasharray="191 477" stroke-dashoffset="-167"/></svg>
+      <div class="donut-c"><div class="donut-num">100</div><div class="donut-lbl">Shares</div></div>
+    </div>
+    <div class="leg-row">
+      <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div><span><strong style="color:white">Edwin William Otieno</strong> — 60 Shares (60%)</span></div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--blue)"></div><span><strong style="color:white">[Partner Name]</strong> — 40 Shares (40%)</span></div>
+    </div>
+    <a href="pages/partnership.html" class="btn btn-gold">Full Partnership Details &rarr;</a>
+  </div>
+  <div class="anim d1">
+    <div class="pmini"><div class="pmini-head lg"><div class="pmini-av gd">EWO</div><div><div class="pmini-name">Edwin William Otieno</div><div class="pmini-role gd">Managing Director &middot; Lead Partner</div></div><div class="pmini-share gd">60%</div></div><ul class="pmini-body"><li>Overall strategic direction &amp; vision</li><li>Key institutional &amp; government relations</li><li>Oversight of both divisions</li><li>Final authority on financial decisions</li><li>Company signing authority</li></ul></div>
+    <div class="pmini"><div class="pmini-head bl"><div class="pmini-av bl">[ ]</div><div><div class="pmini-name" style="color:rgba(255,255,255,0.75)">[Partner Name]</div><div class="pmini-role bl">Executive Partner &middot; To Be Confirmed</div></div><div class="pmini-share bl">40%</div></div><ul class="pmini-body"><li>Co-lead on operations &amp; supply chain</li><li>Support business development</li><li>Manage assigned client portfolios</li><li>Participate in all major decisions</li></ul></div>
+  </div>
+</div></div></section>
+
+<div class="cta-band"><div class="cta-bg-ltr">W</div><div class="cta-inner anim">
+  <div class="eyebrow teal" style="justify-content:center"><div class="eyebrow-bar"></div>Ready to Begin</div>
+  <h2 class="display" style="font-size:clamp(2.2rem,5vw,4rem);margin-bottom:1.2rem;">The vision is clear.<br><em>The time is now.</em></h2>
+  <p class="body-text light" style="max-width:520px;margin:0 auto;">Willed Company Limited is at pre-launch stage. The right partner can co-build Kenya's most purposeful integrated supply and advisory business.</p>
+  <div class="cta-actions">
+    <a href="pages/financials.html" class="btn btn-gold">View Financial Plan</a>
+    <a href="pages/roadmap.html" class="btn btn-blue">See 3-Year Roadmap</a>
+    <a href="pages/contact.html" class="btn btn-ghost">Contact Edwin</a>
+  </div>
+</div></div>
+
+<script src="js/shell.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

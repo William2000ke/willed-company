@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Services | Willed Company Limited</title><link rel="stylesheet" href="../css/style.css"/><style>
+.smega{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.04);margin-top:3rem}
+.dh{padding:2.5rem;background:rgba(12,26,46,0.7)}.dh.d1{border-top:3px solid var(--blue)}.dh.d2{border-top:3px solid var(--gold)}
+.dh-num{font-family:"Playfair Display",serif;font-size:5rem;font-weight:900;color:rgba(255,255,255,0.05);line-height:1}
+.dh-title{font-family:"Playfair Display",serif;font-size:1.4rem;color:var(--white);margin-bottom:0.5rem}
+.dh-text{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.7}
+.sc{background:rgba(12,26,46,0.6);padding:2rem;transition:background 0.3s;position:relative;overflow:hidden}
+.sc::after{content:"";position:absolute;left:0;top:0;width:3px;height:0;transition:height 0.4s}
+.sc.gs::after{background:var(--grad-gold)}.sc.bs::after{background:var(--grad-blue)}
+.sc:hover{background:rgba(30,63,120,0.2)}.sc:hover::after{height:100%}
+.sc-icon{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;font-size:1.2rem}
+.sc-icon.gi{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25)}
+.sc-icon.bi{background:rgba(30,111,217,0.12);border:1px solid rgba(30,111,217,0.25)}
+.sc-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--white);margin-bottom:0.4rem}
+.sc-text{font-size:0.77rem;color:rgba(255,255,255,0.45);line-height:1.7}
+.sc-list li{font-size:0.7rem;color:rgba(255,255,255,0.32);padding:0.2rem 0;display:flex;gap:0.3rem}
+.sc-list li::before{content:"·";color:var(--gold)}
+.prow{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:2rem}
+.ps{padding:1.6rem 1rem;text-align:center;border-right:1px solid var(--border)}.ps:last-child{border-right:none}
+.ps-n{font-family:"Playfair Display",serif;font-size:2rem;font-weight:700;line-height:1}
+.ps:nth-child(1) .ps-n{color:var(--gold)}.ps:nth-child(2) .ps-n{color:var(--teal)}.ps:nth-child(3) .ps-n{color:var(--blue)}
+.ps:nth-child(4) .ps-n{color:var(--purple)}.ps:nth-child(5) .ps-n{color:var(--coral)}.ps:nth-child(6) .ps-n{color:var(--green)}
+.ps-t{font-size:0.75rem;font-weight:700;color:var(--navy);margin:0.3rem 0}
+.ps-s{font-size:0.68rem;color:var(--gray);line-height:1.4}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.pc{background:var(--white);border-radius:12px;padding:2rem;border:1.5px solid var(--border);position:relative;transition:all 0.3s}
+.pc:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.1)}
+.pc.feat{border-color:var(--gold)}
+.pc-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--grad-gold);color:var(--navy);font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.25rem 0.9rem;border-radius:12px;white-space:nowrap}
+.pc-tier{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem}
+.pc-price{font-family:"Playfair Display",serif;font-size:1.5rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem}
+.pc-price small{font-size:0.8rem;color:var(--gray);font-family:"Plus Jakarta Sans",sans-serif;font-weight:400}
+.pc-desc{font-size:0.78rem;color:var(--gray);margin-bottom:1.3rem;padding-bottom:1.3rem;border-bottom:1px solid var(--border);line-height:1.5}
+.pc-feat li{font-size:0.78rem;color:var(--gray);padding:0.36rem 0;display:flex;gap:0.5rem;border-bottom:1px solid rgba(0,0,0,0.04)}
+.pc-feat li:last-child{border-bottom:none}
+.pc-feat li::before{content:"checkmark";color:var(--gold);font-weight:700;flex-shrink:0;font-size:0.7rem}
+.pc-cta{display:block;text-align:center;margin-top:1.8rem;padding:0.75rem;border-radius:6px;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.3s;background:var(--grad-gold);color:var(--navy)}
+.itrio{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.itrio img{width:100%;height:190px;object-fit:cover;border-radius:10px;filter:brightness(0.75);transition:filter 0.3s}
+.itrio img:hover{filter:brightness(0.95)}
+@media(max-width:960px){.smega,.pgrid,.prow{grid-template-columns:1fr}.itrio{grid-template-columns:1fr}}
+</style></head><body>
+<div class="page-hero"><div class="page-hero-glow"></div><div class="wrap"><div class="breadcrumb"><a href="../index.html">Home</a><span>/</span>Services</div><div class="eyebrow teal"><div class="eyebrow-bar"></div>What We Do</div><h1 class="display ha">Two divisions.<br><em>One trusted company.</em></h1><p class="body-text light ha ha1" style="max-width:520px;margin-top:1rem;">Medical &amp; general supplies for Kenya's institutions &mdash; and the financial advisory expertise to help manage every shilling effectively.</p></div></div>
+<section class="section s-dark"><div class="wrap">
+<div class="anim"><div class="eyebrow teal"><div class="eyebrow-bar"></div>Our Two Divisions</div><h2 class="heading light">Everything your <em>organisation needs.</em></h2></div>
+<div class="smega">
+<div class="dh d1 anim"><div class="dh-num">01</div><div class="dh-title">Medical &amp; General Supplies</div><p class="dh-text">Quality-assured procurement and reliable delivery of medical consumables and institutional goods. Vetted suppliers, competitive pricing, 48-hour delivery across Kenya.</p></div>
+<div class="dh d2 anim"><div class="dh-num">02</div><div class="dh-title">Financial Advisory Services</div><p class="dh-text">Expert financial guidance empowering clients to manage resources, budgets, and investments with precision. From cash flow to investment strategy.</p></div>
+<div class="sc bs anim"><div class="sc-icon bi">&#128138;</div><div class="sc-title">Medical Consumables</div><p class="sc-text">Full range of pharmaceutical and clinical consumables for hospitals, clinics and health facilities.</p><ul class="sc-list"><li>Syringes, cannulas, IV sets</li><li>Wound care &amp; dressing materials</li><li>Diagnostic &amp; lab supplies</li></ul></div>
+<div class="sc gs anim"><div class="sc-icon gi">&#128176;</div><div class="sc-title">Financial Retainers</div><p class="sc-text">Monthly advisory retainer packages tailored to your organisation's size and financial complexity.</p><ul class="sc-list"><li>Basic: KES 15K&#8211;25K/mo</li><li>Standard: KES 30K&#8211;50K/mo</li><li>Premium: KES 60K&#8211;120K/mo</li></ul></div>
+<div class="sc bs anim"><div class="sc-icon bi">&#129529;</div><div class="sc-title">PPE &amp; Hygiene Products</div><p class="sc-text">Personal protective equipment and medical-grade hygiene supplies for all healthcare settings.</p><ul class="sc-list"><li>Gloves, masks, gowns, shields</li><li>Sanitisers &amp; disinfectants</li><li>Sterilisation supplies</li></ul></div>
+<div class="sc gs anim"><div class="sc-icon gi">&#128200;</div><div class="sc-title">Cash Flow Management</div><p class="sc-text">Working capital analysis, cash flow forecasting, and optimisation strategies for sustainable operations.</p><ul class="sc-list"><li>Monthly cash flow reports</li><li>Working capital advisory</li><li>Invoice management guidance</li></ul></div>
+<div class="sc bs anim"><div class="sc-icon bi">&#127973;</div><div class="sc-title">Medical Devices</div><p class="sc-text">Reliable medical equipment including diagnostic and monitoring devices for clinical use.</p><ul class="sc-list"><li>Blood pressure monitors</li><li>Glucometers &amp; pulse oximeters</li><li>Thermometers &amp; diagnostics</li></ul></div>
+<div class="sc gs anim"><div class="sc-icon gi">&#128203;</div><div class="sc-title">Procurement Budget Planning</div><p class="sc-text">Annual procurement spend analysis, budget structuring, and supplier cost benchmarking for institutions.</p><ul class="sc-list"><li>Annual budget modelling</li><li>Spend analysis &amp; reporting</li><li>Supplier benchmarking</li></ul></div>
+<div class="sc bs anim"><div class="sc-icon bi">&#128230;</div><div class="sc-title">General Supplies</div><p class="sc-text">Comprehensive institutional supply of office, cleaning, catering, and safety goods for any organisation.</p><ul class="sc-list"><li>Office stationery &amp; printing</li><li>Cleaning &amp; sanitation products</li><li>Safety &amp; fire prevention gear</li></ul></div>
+<div class="sc gs anim"><div class="sc-icon gi">&#127919;</div><div class="sc-title">Investment &amp; Tax Advisory</div><p class="sc-text">Strategic guidance on asset allocation, KRA compliance, VAT, PAYE optimisation, and investment decisions.</p><ul class="sc-list"><li>Investment strategy</li><li>KRA &amp; VAT compliance</li><li>Tender financial support</li></ul></div>
+</div>
+<div class="itrio anim d2">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Medical supplies"/>
+<img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Financial advisory"/>
+<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Supply chain"/>
+</div>
+</div></section>
+<section class="section s-lgray"><div class="wrap"><div class="anim"><div class="eyebrow"><div class="eyebrow-bar"></div>Procurement Process</div><h2 class="heading">How supply orders <em>work.</em></h2></div>
+<div class="prow anim d1">
+<div class="ps"><div class="ps-n">01</div><div class="ps-t">Request</div><div class="ps-s">Client issues PO or RFQ</div></div>
+<div class="ps"><div class="ps-n">02</div><div class="ps-t">Confirm</div><div class="ps-s">We confirm within 24 hours</div></div>
+<div class="ps"><div class="ps-n">03</div><div class="ps-t">Procure</div><div class="ps-s">Order placed with vetted supplier</div></div>
+<div class="ps"><div class="ps-n">04</div><div class="ps-t">Inspect</div><div class="ps-s">Quality check at warehouse</div></div>
+<div class="ps"><div class="ps-n">05</div><div class="ps-t">Deliver</div><div class="ps-s">Full documentation provided</div></div>
+<div class="ps"><div class="ps-n">06</div><div class="ps-t">Follow Up</div><div class="ps-s">Post-delivery review &amp; invoice</div></div>
+</div></div></section>
+<section class="section s-white"><div class="wrap"><div class="anim" style="text-align:center"><div class="eyebrow" style="justify-content:center"><div class="eyebrow-bar"></div>Advisory Pricing</div><h2 class="heading">Transparent. <em>Flexible.</em> Structured.</h2><p class="body-text" style="max-width:500px;margin:0.8rem auto 0">Three retainer tiers designed for every stage of growth. Contact Edwin at otienowilliam86@gmail.com for a custom quote.</p></div>
+<div class="pgrid">
+<div class="pc anim d1"><div class="pc-tier">Basic</div><div class="pc-price">KES 15K&#8211;25K<small>/month</small></div><div class="pc-desc">Cash flow management + monthly management report</div><ul class="pc-feat"><li>Monthly cash flow review</li><li>Management account summary</li><li>KRA compliance guidance</li><li>Email &amp; call support</li></ul><a href="contact.html" class="pc-cta">Enquire Now</a></div>
+<div class="pc feat anim d2"><div class="pc-badge">Most Popular</div><div class="pc-tier">Standard</div><div class="pc-price">KES 30K&#8211;50K<small>/month</small></div><div class="pc-desc">Full cash flow + procurement budget advisory + reporting</div><ul class="pc-feat"><li>Everything in Basic</li><li>Procurement budget planning</li><li>Supplier cost analysis</li><li>Quarterly strategy session</li><li>Dedicated advisor</li></ul><a href="contact.html" class="pc-cta">Enquire Now</a></div>
+<div class="pc anim d3"><div class="pc-tier">Premium</div><div class="pc-price">KES 60K&#8211;120K<small>/month</small></div><div class="pc-desc">Full financial partnership &mdash; strategy, investment, tax, reporting</div><ul class="pc-feat"><li>Everything in Standard</li><li>Investment advisory</li><li>Tax planning &amp; optimisation</li><li>Tender financial support</li><li>Board-ready monthly reports</li></ul><a href="contact.html" class="pc-cta">Enquire Now</a></div>
+</div></div></section>
+<div class="cta-band"><div class="cta-bg-ltr">S</div><div class="cta-inner anim"><div class="eyebrow teal" style="justify-content:center"><div class="eyebrow-bar"></div>Get Started</div><h2 class="display" style="font-size:clamp(2rem,4vw,3.4rem);margin-bottom:1.2rem;">Ready to experience <em>both</em> divisions?</h2><p class="body-text light" style="max-width:480px;margin:0 auto">Email: otienowilliam86@gmail.com &mdash; or use the contact form.</p><div class="cta-actions"><a href="contact.html" class="btn btn-gold">Contact Us Today</a><a href="financials.html" class="btn btn-blue">View Financial Plan</a></div></div></div>
+<script src="../js/shell.js"></script><script src="../js/app.js"></script></body></html>
